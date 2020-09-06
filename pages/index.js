@@ -8,7 +8,6 @@ import Head from 'next/head';
 import { CMS_NAME } from '../lib/constants';
 
 export default function Index({ preview, allPosts }) {
-  debugger;
   const heroPost = allPosts[0];
   const morePosts = allPosts.slice(1);
   return (
@@ -37,7 +36,6 @@ export default function Index({ preview, allPosts }) {
 }
 
 export async function getStaticProps({ preview = false }) {
-  debugger;
   const allPosts = await getAllPostsForHome(preview);
   return {
     props: { preview, allPosts },
