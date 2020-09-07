@@ -15,6 +15,7 @@ import {
 import PostTitle from '../../components/post-title';
 import { CMS_NAME } from '../../lib/constants';
 import Comments from '../../components/comments';
+import LeaveAComment from '../../components/leave-a-comment';
 
 export default function Post({ post, comments, morePosts, preview }) {
   const router = useRouter();
@@ -50,6 +51,8 @@ export default function Post({ post, comments, morePosts, preview }) {
             {comments && comments.length > 0 && (
               <Comments comments={comments} />
             )}
+            <SectionSeparator />
+            <LeaveAComment />
             <SectionSeparator />
             {morePosts && morePosts.length > 0 && (
               <MoreStories posts={morePosts} />

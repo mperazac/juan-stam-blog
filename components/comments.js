@@ -3,10 +3,13 @@ import DateComponent from './date';
 export default function Comments({ comments }) {
   return (
     <section>
-      <div className=''>
+      <h2 class='text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight mb-10 mt-8'>
+        Comentarios
+      </h2>
+      <div>
         {comments.map((comment, index) => (
           <div className='mb-10' key={index}>
-            <p className='text-xl'>{comment.name}</p>
+            <p className='text-xl font-bold'>{comment.name}</p>
             <p className='text-sm text-gray-600 mb-3'>
               <DateComponent dateString={comment.date} />
             </p>
