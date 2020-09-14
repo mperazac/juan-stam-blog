@@ -3,7 +3,7 @@ import DateComponent from './date';
 export default function Comments({ comments }) {
   return (
     <section>
-      <h2 class='text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight mb-10 mt-8'>
+      <h2 className='text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight mb-10 mt-8'>
         Comentarios
       </h2>
       <div>

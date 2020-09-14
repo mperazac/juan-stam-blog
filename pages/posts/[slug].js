@@ -52,7 +52,7 @@ export default function Post({ post, comments, morePosts, preview }) {
               <Comments comments={comments} />
             )}
             <SectionSeparator />
-            <LeaveAComment />
+            <LeaveAComment entryId={post.id} title={post.title} />
             <SectionSeparator />
             {morePosts && morePosts.length > 0 && (
               <MoreStories posts={morePosts} />
