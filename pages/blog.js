@@ -5,7 +5,6 @@ import Layout from '../components/layout';
 import { getAllPostsForHome } from '../lib/api';
 import Head from 'next/head';
 import { BLOG_NAME } from '../lib/constants';
-import Header from '../components/header';
 
 export default function Blog({ preview, allPosts }) {
   const heroPost = allPosts[0];
@@ -17,7 +16,6 @@ export default function Blog({ preview, allPosts }) {
           <title>{BLOG_NAME} - Artículos de teología y más</title>
         </Head>
         <Container>
-          <Header />
           {heroPost && (
             <HeroPost
               title={heroPost.title}

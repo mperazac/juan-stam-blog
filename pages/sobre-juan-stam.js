@@ -10,7 +10,6 @@ function Autor(props) {
   return (
     <Layout preview={props.preview}>
       <Container>
-        <Header />
         <article>
           <Head>
             <title>{BLOG_NAME} - Artículos de teología y más</title>
