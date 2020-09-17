@@ -4,7 +4,7 @@ import Header from '../components/header';
 import Layout from '../components/layout';
 import { BLOG_NAME } from '../lib/constants';
 
-function Index({ preview }) {
+function Contact({ preview }) {
   return (
     <>
       <Layout preview={preview}>
@@ -13,11 +13,11 @@ function Index({ preview }) {
         </Head>
         <Container>
           <Header />
-          <p>Future HOMEPAGE</p>
+          <p>Future CONTACT PAGE</p>
         </Container>
       </Layout>
     </>
   );
 }
 
-export default Index;
+export default Contact;
