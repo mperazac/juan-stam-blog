@@ -8,7 +8,7 @@ export default function Comments({ comments }) {
       </h2>
       <div>
         {comments.map((comment, index) => (
-          <div className='mb-10' key={index}>
+          <div className='mb-10 p-2 border-solid border-2 border-gray-200' key={index}>
             <p className='text-xl font-bold'>{comment.name}</p>
             <p className='text-sm text-gray-600 mb-3'>
               <DateComponent dateString={comment.date} />
