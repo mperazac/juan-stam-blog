@@ -3,7 +3,7 @@ import { BLOG_NAME } from '../lib/constants';
 
 export default function Menu() {
   return (
-    <header className='mt-0 fixed w-full z-10 top-0 body-font shadow-md text-black bg-white'>
+    <div className='mt-0 fixed w-full z-10 top-0 body-font shadow-md text-black bg-white'>
       <div className='container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center'>
         <a
           className='flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0'
@@ -66,6 +66,6 @@ export default function Menu() {
           />
         </div>
       </div>
-    </header>
+    </div>
   );
 }

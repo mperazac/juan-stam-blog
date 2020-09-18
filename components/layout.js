@@ -7,11 +7,9 @@ export default function Layout({ preview, children }) {
   return (
     <>
       <Meta />
-      <div className=''>
-        <Alert preview={preview} />
-        <Menu />
-        <main className='h-screen mt-24'>{children}</main>
-      </div>
+      <Alert preview={preview} />
+      <Menu />
+      <main className='relative mt-24'>{children}</main>
       <Footer />
     </>
   );
