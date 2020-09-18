@@ -31,27 +31,30 @@ export default function Post({ post, comments, morePosts, preview }) {
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <article>
-              <Head>
-                <title>
-                  {post.title} | Next.js Blog Example with {CMS_NAME}
-                </title>
-                <meta property='og:image' content={post.coverImage.url} />
-              </Head>
-              <PostHeader
-                title={post.title}
-                coverImage={post.coverImage}
-                date={post.date}
-                author={post.author}
-              />
-              <PostBody content={post.content} />
-            </article>
-            <SectionSeparator />
-            {comments && comments.length > 0 && (
-              <Comments comments={comments} />
-            )}
-            <SectionSeparator />
-            <LeaveAComment entryId={post.id} title={post.title} />
+            <div className='max-w-4xl mx-auto'>
+              <article>
+                <Head>
+                  <title>
+                    {post.title} | Next.js Blog Example with {CMS_NAME}
+                  </title>
+                  <meta property='og:image' content={post.coverImage.url} />
+                </Head>
+                <PostHeader
+                  title={post.title}
+                  coverImage={post.coverImage}
+                  date={post.date}
+                  author={post.author}
+                  excerpt={post.excerpt}
+                />
+                <PostBody content={post.content} />
+              </article>
+              <SectionSeparator />
+              {comments && comments.length > 0 && (
+                <Comments comments={comments} />
+              )}
+              <SectionSeparator />
+              <LeaveAComment entryId={post.id} title={post.title} />
+            </div>
             <SectionSeparator />
             {morePosts && morePosts.length > 0 && (
               <MoreStories posts={morePosts} />
