@@ -1,14 +1,13 @@
 import Container from '../components/container';
-import MoreStories from '../components/more-stories';
 import HeroPost from '../components/hero-post';
 import Layout from '../components/layout';
 import { getAllPostsForHome } from '../lib/api';
 import Head from 'next/head';
 import { BLOG_NAME } from '../lib/constants';
+import AllStories from '../components/all-stories';
+import Header from '../components/header';
 
 export default function Blog({ preview, allPosts }) {
-  const heroPost = allPosts[0];
-  const morePosts = allPosts.slice(1);
   return (
     <>
       <Layout preview={preview}>
@@ -16,17 +15,8 @@ export default function Blog({ preview, allPosts }) {
           <title>{BLOG_NAME} - Artículos de teología y más</title>
         </Head>
         <Container>
-          {heroPost && (
-            <HeroPost
-              title={heroPost.title}
-              coverImage={heroPost.coverImage}
-              date={heroPost.date}
-              author={heroPost.author}
-              slug={heroPost.slug}
-              excerpt={heroPost.excerpt}
-            />
-          )}
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+          <Header title="Blog" description="Artículos de teología y más" />
+          <AllStories posts={allPosts} />}
         </Container>
       </Layout>
     </>
