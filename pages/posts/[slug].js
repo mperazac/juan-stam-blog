@@ -4,7 +4,6 @@ import ErrorPage from 'next/error';
 import Container from '../../components/container';
 import PostBody from '../../components/post-body';
 import MoreStories from '../../components/more-stories';
-import Header from '../../components/header';
 import PostHeader from '../../components/post-header';
 import SectionSeparator from '../../components/section-separator';
 import Layout from '../../components/layout';
@@ -44,7 +43,7 @@ export default function Post({ post, comments, morePosts, preview }) {
                   coverImage={post.coverImage}
                   date={post.date}
                   author={post.author}
-                  excerpt={post.excerpt}
+                  excerpt={post.excerpt || null}
                 />
                 <PostBody content={post.content} />
               </article>

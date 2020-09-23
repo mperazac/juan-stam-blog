@@ -40,7 +40,7 @@ function Autor(props) {
                       </h2>
                       <div className='w-12 h-1 bg-blue-500 rounded mt-2 mb-4'></div>
                       <p className='text-base text-gray-600'>
-                        <ReactMarkdown source={props.excerpt} />
+                        <ReactMarkdown source={props.excerpt || null} />
                       </p>
                     </div>
                   </div>

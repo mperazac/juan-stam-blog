@@ -29,7 +29,7 @@ export default function Menu() {
           <Link href='/sobre-juan-stam'>
             <a className='mr-5 hover:text-gray-900'>Acerca</a>
           </Link>
-          <Link href='/blog'>
+          <Link href='/blog/1'>
             <a className='mr-5 hover:text-gray-900'>Blog</a>
           </Link>
           <Link href='/contacto'>

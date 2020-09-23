@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import DateComponent from '../components/date';
+import { stringTruncate } from '../lib/helpers';
 import CoverImage from './cover-image';
 
 export default function PostPreview({
@@ -22,11 +23,13 @@ export default function PostPreview({
       <div className='text-sm mb-4 text-gray-700 '>
         <DateComponent dateString={date} />
       </div>
-      <Link as={`/posts/${slug}`} href='/posts/[slug]'>
-        <p className='text-base leading-relaxed mb-4 text-gray-700 cursor-pointer'>
-          <a>{excerpt}</a>
-        </p>
-      </Link>
+      {excerpt && (
+        <Link as={`/posts/${slug}`} href='/posts/[slug]'>
+          <p className='text-base leading-relaxed mb-4 text-gray-700 cursor-pointer'>
+            <a>{stringTruncate(excerpt, 300)}</a>
+          </p>
+        </Link>
+      )}
     </div>
   );
 }

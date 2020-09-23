@@ -7,7 +7,7 @@ export default function CoverImage({ title, url, slug }) {
       src={url}
       alt={`Cover Image for ${title}`}
       className={cn('shadow-small mx-auto', {
-        'lg:h-48 md:h-36 w-full object-cover object-center hover:shadow-medium transition-shadow duration-200': slug,
+        'h-48 w-full object-cover object-center hover:shadow-medium transition-shadow duration-200': slug,
       })}
     />
   )
