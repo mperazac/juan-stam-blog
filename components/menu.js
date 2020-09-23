@@ -1,12 +1,18 @@
 import Link from 'next/link';
+import { useState } from 'react';
 import { BLOG_NAME } from '../lib/constants';
 
 export default function Menu() {
+  const [isOpen, setIsOpen] = useState(false);
+  const handleHamburgerEvent = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <div className='mt-0 fixed w-full z-10 top-0 body-font shadow-md text-black bg-white'>
-      <div className='container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center'>
+    <header className='mt-0 fixed w-full z-10 top-0 body-font shadow-md text-black bg-white'>
+      <div className='container mx-auto flex flex-wrap justify-between p-5 md:flex-row items-center'>
         <a
-          className='flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0'
+          className='flex title-font font-medium items-center text-gray-900 md:mb-0'
           href='/'
         >
           <svg
@@ -25,47 +31,93 @@ export default function Menu() {
           </svg>
           <span className='ml-3 text-xl'>{BLOG_NAME}</span>
         </a>
-        <nav className='md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center'>
-          <Link href='/sobre-juan-stam'>
-            <a className='mr-5 hover:text-gray-900'>Acerca</a>
-          </Link>
-          <Link href='/blog/1'>
-            <a className='mr-5 hover:text-gray-900'>Blog</a>
-          </Link>
-          <Link href='/contacto'>
-            <a className='mr-5 hover:text-gray-900'>Contacto</a>
-          </Link>
-        </nav>
-        <div className='relative'>
-          <div className='absolute flex border border-transparent left-0 top-0 h-full w-10'>
-            <div className='flex items-center justify-center rounded-tl rounded-bl z-10 bg-gray-100 text-gray-600 text-lg h-full w-full'>
-              <svg
-                className='w-4 h-4'
-                fill='none'
-                stroke='currentColor'
-                viewBox='0 0 24 24'
-                xmlns='http://www.w3.org/2000/svg'
-              >
+        <div className='block md:hidden'>
+          <button
+            id='hamburger-menu'
+            onClick={handleHamburgerEvent}
+            className='px-4 cursor-pointer'
+          >
+            <svg
+              className='w-6 h-6'
+              fill='currentColor'
+              viewBox='0 0 20 20'
+              xmlns='http://www.w3.org/2000/svg'
+            >
+              {!isOpen && (
                 <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth='2'
-                  d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'
-                ></path>
-              </svg>
-            </div>
-          </div>
+                  fillRule='evenodd'
+                  d='M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z'
+                  clipRule='evenodd'
+                />
+              )}
+              {isOpen && (
+                <path
+                  fillRule='evenodd'
+                  d='M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z'
+                  clipRule='evenodd'
+                />
+              )}
+            </svg>
+          </button>
+        </div>
 
-          <input
-            id='search'
-            name='search'
-            type='text'
-            placeholder='Buscar'
-            value=''
-            className='text-sm sm:text-base relative w-full border rounded placeholder-gray-400 focus:border-indigo-400 focus:outline-none py-2 pr-2 pl-12'
-          />
+        <div className='w-full flex-grow md:flex md:items-center md:w-auto'>
+          <nav
+            className={`${
+              !isOpen ? 'hidden' : ''
+            } md:block md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 md:flex-grow text-base`}
+          >
+            <Link href='/sobre-juan-stam'>
+              <a className='block text-right md:inline-block mr-5 hover:text-gray-900'>
+                Acerca
+              </a>
+            </Link>
+            <Link href='/blog/1'>
+              <a className='block text-right md:inline-block mr-5 hover:text-gray-900'>
+                Blog
+              </a>
+            </Link>
+            <Link href='/contacto'>
+              <a className='block text-right md:inline-block mr-5 hover:text-gray-900'>
+                Contacto
+              </a>
+            </Link>
+          </nav>
+          <div
+            className={`${
+              !isOpen ? 'hidden' : ''
+            } relative mt-2 mx-auto md:m-0`}
+          >
+            <div className='absolute flex border border-transparent left-0 top-0 h-full w-10'>
+              <div className='flex items-center justify-center rounded-tl rounded-bl z-10 bg-gray-100 text-gray-600 text-lg h-full w-full'>
+                <svg
+                  className='w-4 h-4'
+                  fill='none'
+                  stroke='currentColor'
+                  viewBox='0 0 24 24'
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth='2'
+                    d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'
+                  ></path>
+                </svg>
+              </div>
+            </div>
+
+            <input
+              id='search'
+              name='search'
+              type='text'
+              placeholder='Buscar'
+              value=''
+              className='text-sm sm:text-base relative w-full border rounded placeholder-gray-400 focus:border-indigo-400 focus:outline-none py-2 pr-2 pl-12'
+            />
+          </div>
         </div>
       </div>
-    </div>
+    </header>
   );
 }
