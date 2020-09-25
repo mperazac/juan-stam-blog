@@ -14,7 +14,7 @@ export default function Pagination({ limit, total, page, skip }) {
   };
 
   return (
-    <div className='bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6'>
+    <div className='bg-white px-4 py-3 flex items-center justify-between sm:px-6'>
       <div className='flex-1 flex justify-between sm:hidden'>
         {showPreviousPage && (
           <Link href={`/blog/${Number(page) - 1}`}>
