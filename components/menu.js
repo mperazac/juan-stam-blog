@@ -85,7 +85,7 @@ export default function Menu() {
           </nav>
           <div
             className={`${
-              !isOpen ? 'hidden' : ''
+              !isOpen ? 'hidden md:block' : ''
             } relative mt-2 mx-auto md:m-0`}
           >
             <div className='absolute flex border border-transparent left-0 top-0 h-full w-10'>
