@@ -1,22 +1,23 @@
-import Container from '../components/container';
+import Container from '../../components/container';
 import { useEffect, useState } from 'react';
-import Layout from '../components/layout';
+import Layout from '../../components/layout';
 import Head from 'next/head';
-import AllStories from '../components/all-stories';
-import Header from '../components/header';
-import { BLOG_NAME } from '../lib/constants';
+import AllStories from '../../components/all-stories';
+import Header from '../../components/header';
+import { BLOG_NAME } from '../../lib/constants';
 import { useRouter } from 'next/router';
+import Pagination from '../../components/pagination';
 
 export default function Busqueda() {
   const [data, setData] = useState();
   const router = useRouter();
 
-  const searchEndpoint = (query) => `/api/search?q=${query}`;
+  const searchEndpoint = (query, page) => `/api/search?q=${query}&page=${page}`;
 
   useEffect(() => {
     async function fetchData() {
       const results = await (
-        await fetch(searchEndpoint(router.query.q))
+        await fetch(searchEndpoint(router.query.q, router.query.page))
       ).json();
       setData(results);
     }
@@ -37,13 +38,20 @@ export default function Busqueda() {
         {data?.items.length > 0 && (
           <>
             <p>
-              Se encontraron {data.total} artículos con &quot;{router.query.q}
+              Artículos de blog que incluyen: &quot;{router.query.q}
               &quot;
             </p>
-            <AllStories posts={data} />
+            <AllStories posts={data.items} />
+            <Pagination
+              pageName='busqueda'
+              limit={data.limit}
+              total={data.total}
+              page={data.page}
+              skip={data.skip}
+            />
           </>
         )}
-        {!data.items && (
+        {!data?.items && (
           <>
             <p>
               No se encontraron resultados para &quot;{router.query.q}&quot;
