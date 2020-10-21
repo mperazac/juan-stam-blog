@@ -28,8 +28,8 @@ function Index({ preview, allPosts }) {
                 <div className='lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center'>
                   <div className='text-white font-sans leading-relaxed text-3xl px-8'>
                     <h3>
-                      Encuentre variedad de artículos escritos por el teólogo
-                      Juan Stam y otros autores invitados.
+                      Encuentre gran variedad de artículos escritos por el
+                      teólogo Juan Stam y otros autores invitados.
                     </h3>
                   </div>
                 </div>
@@ -90,6 +90,7 @@ function Index({ preview, allPosts }) {
 
 const PAGE_LIMIT = 3;
 const SKIP = 0;
+
 export async function getStaticProps(preview = false) {
   const allPosts = await getAllPostsForHome(SKIP, PAGE_LIMIT, preview);
   return {
