@@ -8,16 +8,17 @@ import { BLOG_NAME } from '../../lib/constants';
 import { useRouter } from 'next/router';
 import Pagination from '../../components/pagination';
 
-export default function Busqueda() {
+export default function Busqueda({ preview }) {
   const [data, setData] = useState();
   const router = useRouter();
 
-  const searchEndpoint = (query, page) => `/api/search?q=${query}&page=${page}`;
+  const searchEndpoint = (query, page, preview) =>
+    `/api/search?q=${query}&page=${page}&preview=${preview}`;
 
   useEffect(() => {
     async function fetchData() {
       const results = await (
-        await fetch(searchEndpoint(router.query.q, router.query.page))
+        await fetch(searchEndpoint(router.query.q, router.query.page, preview))
       ).json();
       setData(results);
     }
@@ -61,4 +62,28 @@ export default function Busqueda() {
       </Container>
     </Layout>
   );
+}
+
+export async function getStaticPaths() {
+  return {
+    paths: [
+      { params: { page: '1' } },
+      { params: { page: '2' } },
+      { params: { page: '3' } },
+      { params: { page: '4' } },
+      { params: { page: '5' } },
+      { params: { page: '6' } },
+      { params: { page: '7' } },
+      { params: { page: '8' } },
+      { params: { page: '9' } },
+      { params: { page: '10' } },
+    ],
+    fallback: true,
+  };
+}
+
+export async function getStaticProps(preview = false) {
+  return {
+    props: { preview },
+  };
 }
