@@ -90,7 +90,7 @@ function Index({ preview, allPosts }) {
 
 const PAGE_LIMIT = 3;
 const SKIP = 0;
-export async function getStaticProps(preview = false) {
+export async function getStaticProps({ preview = false }) {
   const allPosts = await getAllPostsForHome(SKIP, PAGE_LIMIT, preview);
   return {
     props: { allPosts, preview },
