@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { BLOG_NAME } from '../lib/constants';
+import Search from './search';
 
 export default function Menu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -83,6 +84,7 @@ export default function Menu() {
               </a>
             </Link>
           </nav>
+          <Search isOpen={isOpen} />
         </div>
       </div>
     </header>
