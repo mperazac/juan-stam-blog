@@ -9,7 +9,7 @@ export default function Search(props) {
   const handleKeyPress = (event) => {
     if (event.key === 'Enter' && value.length > 0) {
       router.push({
-        pathname: '/busqueda/1',
+        pathname: '/busqueda',
         query: { q: value },
       });
     }
