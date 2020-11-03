@@ -2,10 +2,9 @@ import { searchPosts } from '../../lib/api';
 
 export default async function search(req, res) {
   const { q, page } = req.query;
-  const preview = false;
 
   // Fetch the headless CMS
-  const posts = await searchPosts(q, page, preview);
+  const posts = await searchPosts(q, page);
 
   if (!posts) {
     return res.status(401).json({ message: 'No posts found' });
