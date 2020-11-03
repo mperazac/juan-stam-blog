@@ -19,7 +19,7 @@ export default function Blog({ preview, items, limit, total, page, skip }) {
           {items && (
             <>
               <AllStories posts={items} />
-              <Pagination limit={limit} total={total} page={page} skip={skip} />
+              <Pagination pageName='blog' limit={limit} total={total} page={page} skip={skip} />
             </>
           )}
         </Container>
