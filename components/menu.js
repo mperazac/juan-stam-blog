@@ -17,7 +17,7 @@ export default function Menu() {
           href='/'
         >
           <svg
-            className='w-10 h-10 text-white p-2 bg-blue-500 rounded-full'
+            className='w-10 h-10 text-white p-2 bg-golden-1 rounded-full'
             fill='none'
             stroke='currentColor'
             viewBox='0 0 24 24'

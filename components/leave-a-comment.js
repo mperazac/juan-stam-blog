@@ -137,7 +137,7 @@ export default function LeaveAComment(props) {
             />
             <div>
               <button
-                className='bg-blue-500 hover:bg-blue-700 text-white font-bold mt-5 py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:opacity-75'
+                className='bg-golden-1 hover:bg-opacity-75 text-white font-bold mt-5 py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:opacity-75'
                 type='submit'
                 disabled={!dirty || isSubmitting}
               >

@@ -30,7 +30,9 @@ function Index({ preview, allPosts }) {
                 artículos de blog. Apasionado por el libro de Apocalipsis.
               </h3>
             </div>
-            <button className="border-white border-2 py-4 px-8 border-solid text-white ml-8">Conoce más</button>
+            <button className='border-white uppercase border-2 py-4 px-8 border-solid text-gray-800 ml-8 bg-golden-1 hover:bg-opacity-75'>
+              Conoce más
+            </button>
           </div>
         </div>
         <Container>
@@ -63,7 +65,7 @@ function Index({ preview, allPosts }) {
               <AllStories posts={items} />
               <div className='p-2 w-full'>
                 <Link href='/blog/1'>
-                  <button className='flex mx-auto text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg'>
+                  <button className='flex mx-auto text-white bg-golden-1 hover:bg-opacity-75 border-0 py-2 px-8 focus:outline-none rounded text-lg'>
                     Leer más
                   </button>
                 </Link>

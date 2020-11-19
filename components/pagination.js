@@ -74,7 +74,7 @@ export default function Pagination({ pageName, limit, total, page, skip }) {
               '-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700'
             }
             subContainerClassName={'pages pagination'}
-            activeClassName={'bg-blue-400 text-white'}
+            activeClassName={'bg-golden-1 text-white'}
           />
         </div>
       </div>

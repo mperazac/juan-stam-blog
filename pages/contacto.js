@@ -155,7 +155,7 @@ function Contact({ preview }) {
                             <button
                               type='submit'
                               disabled={isSubmitting}
-                              className='flex mx-auto text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg'
+                              className='flex mx-auto text-white bg-golden-1 hover:bg-opacity-75 border-0 py-2 px-8 focus:outline-none rounded text-lg'
                             >
                               Enviar
                             </button>

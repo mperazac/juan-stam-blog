@@ -8,6 +8,7 @@ module.exports = {
         success: '#0070f3',
         cyan: '#79FFE1',
         'cover-1': '#243035',
+        'golden-1': '#efb810',
       },
       spacing: {
         28: '7rem',
