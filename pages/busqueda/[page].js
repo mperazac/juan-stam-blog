@@ -7,10 +7,11 @@ import Header from '../../components/header';
 import { BLOG_NAME } from '../../lib/constants';
 import { useRouter } from 'next/router';
 import Pagination from '../../components/pagination';
+import LoadingSpinner from '../../components/loading-spinner';
 
 export default function Busqueda({ preview, page }) {
   const [data, setData] = useState();
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
 
   const searchEndpoint = (query, page, preview) =>
@@ -18,7 +19,6 @@ export default function Busqueda({ preview, page }) {
 
   useEffect(() => {
     async function fetchData() {
-      setIsLoading(true);
       const results = await (
         await fetch(searchEndpoint(router.query.q, page, preview))
       ).json();
@@ -39,6 +39,7 @@ export default function Busqueda({ preview, page }) {
       </Head>
       <Container>
         <Header title='Blog' description='Artículos de teología y más' />
+        {isLoading && <LoadingSpinner />}
         {data?.items.length > 0 && (
           <>
             <p>
