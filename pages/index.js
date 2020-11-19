@@ -21,28 +21,17 @@ function Index({ preview, allPosts }) {
         <Head>
           <title>{BLOG_NAME} - Artículos de teología y más</title>
         </Head>
-        <div className='bg-cover-1 mb-24'>
-          <Container>
-            <section className='text-gray-700 body-font'>
-              <div className='container mx-auto flex px-5 py-12 md:flex-row flex-col items-center'>
-                <div className='lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center'>
-                  <div className='text-white font-sans leading-relaxed text-3xl px-8'>
-                    <h3>
-                      Encuentre gran variedad de artículos escritos por el
-                      teólogo Juan Stam y otros autores invitados.
-                    </h3>
-                  </div>
-                </div>
-                <div className='lg:max-w-lg lg:w-full md:w-1/2 w-5/6'>
-                  <img
-                    className='object-cover object-center rounded'
-                    alt='hero'
-                    src='/images/juan_stam.jpg'
-                  />
-                </div>
-              </div>
-            </section>
-          </Container>
+        <div className='juan-cover mb-24'>
+          <div className='container mx-auto py-16 lg:py-48'>
+            <h5 className='text-white px-8 text-lg'>Juan Stam 1928-2020</h5>
+            <div className='text-white font-sans leading-relaxed text-xl lg:text-3xl px-8 lg:w-1/2 mb-8'>
+              <h3>
+                Teólogo, profesor universitario, escritor de varios libros y
+                artículos de blog. Apasionado por el libro de Apocalipsis.
+              </h3>
+            </div>
+            <button className="border-white border-2 py-4 px-8 border-solid text-white ml-8">Conoce más</button>
+          </div>
         </div>
         <Container>
           {/* <div>
@@ -88,7 +77,7 @@ function Index({ preview, allPosts }) {
   );
 }
 
-const PAGE_LIMIT = 3;
+const PAGE_LIMIT = 6;
 const SKIP = 0;
 export async function getStaticProps({ preview = false }) {
   const allPosts = await getAllPostsForHome(SKIP, PAGE_LIMIT, preview);

@@ -10,7 +10,7 @@ export default function Menu() {
   };
 
   return (
-    <header className='mt-0 fixed w-full z-10 top-0 body-font shadow-md text-black bg-white'>
+    <header className='mt-0 w-full z-10 top-0 body-font shadow-md text-black bg-white'>
       <div className='container mx-auto flex flex-wrap justify-between p-5 md:flex-row items-center'>
         <a
           className='flex title-font font-medium items-center text-gray-900 md:mb-0'

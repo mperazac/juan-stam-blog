@@ -9,7 +9,7 @@ export default function Layout({ preview, children }) {
       <Meta />
       <Alert preview={preview} />
       <Menu />
-      <main className='relative mt-48 md:mt-32'>{children}</main>
+      <main className='relative mt-4 lg:mt-8'>{children}</main>
       <Footer />
     </>
   );

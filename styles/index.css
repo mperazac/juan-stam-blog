@@ -9,3 +9,8 @@
     @apply leading-8;
   }
 }
+
+.juan-cover {
+  background: url('/images/juan_stam-cover.jpg') no-repeat center center;
+  background-size: cover;
+}
