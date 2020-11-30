@@ -14,3 +14,8 @@
   background: url('/images/juan_stam-cover.jpg') no-repeat center center;
   background-size: cover;
 }
+
+article a {
+  color: #15c;
+  text-decoration: underline;
+}

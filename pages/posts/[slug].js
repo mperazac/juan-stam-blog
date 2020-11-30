@@ -12,7 +12,7 @@ import {
   getPostAndMorePostsAndComments,
 } from '../../lib/api';
 import PostTitle from '../../components/post-title';
-import { CMS_NAME } from '../../lib/constants';
+import { BLOG_NAME } from '../../lib/constants';
 import Comments from '../../components/comments';
 import LeaveAComment from '../../components/leave-a-comment';
 
@@ -34,7 +34,7 @@ export default function Post({ post, comments, morePosts, preview }) {
               <article>
                 <Head>
                   <title>
-                    {post.title} | Next.js Blog Example with {CMS_NAME}
+                    {post.title} | {BLOG_NAME}
                   </title>
                   <meta property='og:image' content={post.coverImage.url} />
                 </Head>

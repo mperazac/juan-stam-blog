@@ -99,7 +99,7 @@ export default function LeaveAComment(props) {
                 Nombre:
               </label>
               <Field
-                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+                className='appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
                 name='name'
                 type='text'
               />
@@ -115,7 +115,7 @@ export default function LeaveAComment(props) {
               <Field
                 name='comment'
                 component='textarea'
-                className='shadow appearance-none border rounded w-full px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+                className='appearance-none border rounded w-full px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
                 cols='30'
                 rows='10'
               />

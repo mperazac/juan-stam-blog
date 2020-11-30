@@ -30,9 +30,11 @@ function Index({ preview, allPosts }) {
                 artículos de blog. Apasionado por el libro de Apocalipsis.
               </h3>
             </div>
-            <button className='border-white uppercase border-2 py-4 px-8 border-solid text-gray-800 ml-8 bg-golden-1 hover:bg-opacity-75'>
-              Conoce más
-            </button>
+            <Link href='/sobre-juan-stam'>
+              <a className='border-white uppercase border-2 py-4 px-8 border-solid text-gray-800 ml-8 bg-golden-1 hover:bg-opacity-75'>
+                Conoce más
+              </a>
+            </Link>
           </div>
         </div>
         <Container>

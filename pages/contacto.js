@@ -68,7 +68,9 @@ function Contact({ preview }) {
   const renderMessageSent = () => {
     return (
       <div className='text-center p-8 '>
-        <h2 className='text-3xl text-green-600 font-semibold leading-12'>¡Mensaje enviado!</h2>
+        <h2 className='text-3xl text-green-600 font-semibold leading-12'>
+          ¡Mensaje enviado!
+        </h2>
         <p className='text-xl'>Pronto nos comunicaremos con usted.</p>
       </div>
     );
@@ -105,7 +107,7 @@ function Contact({ preview }) {
                               id='name'
                               name='name'
                               placeholder='Nombre'
-                              className='w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-blue-500 text-base px-4 py-2'
+                              className='w-full rounded border border-gray-400 focus:outline-none focus:border-blue-500 text-base px-4 py-2'
                             />
                             <DisplayError
                               error={errors.name}
@@ -118,7 +120,7 @@ function Contact({ preview }) {
                               name='email'
                               type='email'
                               placeholder='Correo electrónico'
-                              className='w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-blue-500 text-base px-4 py-2'
+                              className='w-full rounded border border-gray-400 focus:outline-none focus:border-blue-500 text-base px-4 py-2'
                             />
                             <DisplayError
                               error={errors.email}
@@ -130,23 +132,25 @@ function Contact({ preview }) {
                               name='message'
                               component='textarea'
                               placeholder='Escriba su mensaje'
-                              className='w-full bg-gray-100 rounded border border-gray-400 focus:outline-none h-48 focus:border-blue-500 text-base px-4 py-2 resize-none block'
+                              className='w-full rounded border border-gray-400 focus:outline-none h-48 focus:border-blue-500 text-base px-4 py-2 resize-none block'
                             />
                             <DisplayError
                               error={errors.message}
                               touched={touched.message}
                             />
                           </div>
-                          <Recaptcha
-                            sitekey={process.env.NEXT_PUBLIC_GOOGLE_CAPCHA}
-                            render='explicit'
-                            verifyCallback={(response) => {
-                              setFieldValue('recaptcha', response);
-                            }}
-                            onloadCallback={() => {
-                              console.log('done loading!');
-                            }}
-                          />
+                          <div className='ml-2 my-6'>
+                            <Recaptcha
+                              sitekey={process.env.NEXT_PUBLIC_GOOGLE_CAPCHA}
+                              render='explicit'
+                              verifyCallback={(response) => {
+                                setFieldValue('recaptcha', response);
+                              }}
+                              onloadCallback={() => {
+                                console.log('done loading!');
+                              }}
+                            />
+                          </div>
                           <DisplayError
                             error={errors.recaptcha}
                             touched={touched.recaptcha}
@@ -155,7 +159,7 @@ function Contact({ preview }) {
                             <button
                               type='submit'
                               disabled={isSubmitting}
-                              className='flex mx-auto text-white bg-golden-1 hover:bg-opacity-75 border-0 py-2 px-8 focus:outline-none rounded text-lg'
+                              className='text-white bg-golden-1 hover:bg-opacity-75 border-0 py-2 px-8 focus:outline-none rounded text-lg'
                             >
                               Enviar
                             </button>
