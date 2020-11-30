@@ -36,7 +36,7 @@ export default function Post({ post, comments, morePosts, preview }) {
                   <title>
                     {post.title} | {BLOG_NAME}
                   </title>
-                  <meta property='og:image' content={post.coverImage.url} />
+                  {/* <meta property='og:image' content={post.coverImage.url} /> */}
                 </Head>
                 <PostHeader
                   title={post.title}
