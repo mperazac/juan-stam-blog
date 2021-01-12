@@ -78,6 +78,11 @@ export default function Menu() {
                 Blog
               </a>
             </Link>
+            <Link href='/libros'>
+              <a className='block text-right md:inline-block mr-5 hover:text-gray-900'>
+                Libros
+              </a>
+            </Link>
             <Link href='/contacto'>
               <a className='block text-right md:inline-block mr-5 hover:text-gray-900'>
                 Contacto
