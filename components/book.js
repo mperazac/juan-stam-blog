@@ -6,7 +6,7 @@ export default function Book({ title, description, cover, storeLink }) {
   return (
     <div className='md:flex mx-6 md:mx-auto my-20 max-h-16 '>
       <img
-        className='h-full w-full md:w-1/3  object-contain rounded pb-5/6 max-h-2'
+        className='h-full w-full md:w-1/4  object-contain rounded pb-5/6 max-h-2'
         src={cover.fields.file.url}
         alt='bag'
       />
