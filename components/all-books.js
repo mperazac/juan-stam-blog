@@ -6,10 +6,10 @@ export default function AllBooks({ items }) {
     <section>
       <div className=''>
         {items.map((item, index) => (
-          <>
-            <Book key={item.id} {...item} />
+          <div key={item.id}>
+            <Book {...item} />
             {index < items.length - 1 && <SectionSeparator />}
-          </>
+          </div>
         ))}
       </div>
     </section>

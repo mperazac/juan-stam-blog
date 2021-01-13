@@ -2,7 +2,10 @@ import Link from 'next/link';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import markdownStyles from './markdown-styles.module.css';
 
-export default function Book({ title, description, cover, storeLink }) {
+export default function Book({ title, description, cover, links }) {
+  const bookLinks = Object.keys(links).map(function (k) {
+    return links[k];
+  });
   return (
     <div className='md:flex mx-6 md:mx-auto my-20 max-h-16 '>
       <img
@@ -19,15 +22,18 @@ export default function Book({ title, description, cover, storeLink }) {
             {documentToReactComponents(description)}
           </div>
         </p>
-        <div className='flex items-center justify-end mt-4 top-auto'>
-          <Link href={storeLink}>
-            <a
-              className='float-right text-white bg-golden-1 hover:bg-opacity-75 border-0 py-2 px-8 focus:outline-none rounded text-lg'
-              target='_blank'
-            >
-              Comprar en Amazon
-            </a>
-          </Link>
+        <h3 className="text-xl font-semibold ">Adquiérelo en:</h3>
+        <div className='my-4 space-x-3 space-y-3'>
+          {bookLinks.map((bookLink, index) => (
+            <Link href={bookLink.link} key={index}>
+              <a
+                className='inline-block px-6 py-2 bg-golden-1 text-lg leading-6 text-white text-center rounded shadow transition hover:shadow-lg focus:outline-none hover:bg-opacity-75'
+                target='_blank'
+              >
+                {bookLink.name}
+              </a>
+            </Link>
+          ))}
         </div>
       </div>
     </div>
