@@ -69,11 +69,17 @@ export default function LeaveAComment(props) {
     return <div className='text-xs text-red-600 my-2'>{error}</div>;
   };
 
-  const InfoMessage = ({message, success}) => {
-    <span className={`text-sm ${success ? 'text-green-600' : 'text-red-600'} inline-block ml-3 align-middle`}>
-      {message}
-    </span>
-  }
+  const InfoMessage = ({ message, success }) => {
+    return (
+      <span
+        className={`text-sm ${
+          success ? 'text-green-600' : 'text-red-600'
+        } inline-block ml-3 align-middle`}
+      >
+        {message}
+      </span>
+    );
+  };
 
   return (
     <div className='w-full max-w-2xl'>
@@ -143,8 +149,15 @@ export default function LeaveAComment(props) {
               >
                 {isSubmitting ? 'Enviando' : 'Enviar'}
               </button>
-              {success && <InfoMessage message="¡Mensaje enviado!" success={true} />}
-              {fail && <InfoMessage message="¡Error al enviar el mensaje. Intente de nuevo" success={false}  />}
+              {success && (
+                <InfoMessage message='¡Mensaje enviado!' success={true} />
+              )}
+              {fail && (
+                <InfoMessage
+                  message='¡Error al enviar el mensaje. Intente de nuevo'
+                  success={false}
+                />
+              )}
             </div>
           </Form>
         )}

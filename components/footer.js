@@ -24,7 +24,7 @@ export default function Footer() {
             <span className='ml-3 text-xl'>{BLOG_NAME}</span>
           </a>
           <p className='text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4'>
-            © 2020 — Costa Rica
+            © {new Date().getFullYear()} — Costa Rica
           </p>
           <span className='inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start'>
             <a
