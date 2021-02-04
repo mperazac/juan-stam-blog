@@ -39,9 +39,10 @@ function Autor(props) {
                         {props.name}
                       </h2>
                       <div className='w-12 h-1 bg-golden-1 rounded mt-2 mb-4'></div>
-                      <p className='text-base text-gray-600'>
-                        <ReactMarkdown source={props.excerpt || null} />
-                      </p>
+                      <ReactMarkdown
+                        source={props.excerpt || null}
+                        className='text-base text-gray-600'
+                      />
                     </div>
                   </div>
                   <div className='sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-300 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left'>
@@ -60,7 +61,8 @@ function Autor(props) {
 }
 
 export async function getStaticProps({ preview = false }) {
-  const data = await getAuthor(preview);
+  const juanStamEntryId = '1O6jOnnIchFw5cewZVrQg0';
+  const data = await getAuthor(preview, juanStamEntryId);
   return {
     props: {
       preview,
